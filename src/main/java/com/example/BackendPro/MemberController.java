@@ -9,21 +9,24 @@ import java.util.*;
 @RequestMapping(value = "/invite")
 
 public class MemberController {
-    private final MemberRepository memberRepository
+    private final MemberRepository memberRepository;
     @PostMapping(value = "/link") // @requestbody <body의 타입> <변수명>
-    public void insertMember(@RequestBody Map<String, Object> body) {
-        //String id = body.get("id").toString();
+    public String insertMember(@RequestBody Map<String, Object> body) {
+
         String name = body.get("name").toString();
         String mail = body.get("mail").toString();
-        String number = body.get("number").toString();// body를 맵에 담음
-        MemberEntity member = new MemberEntity(); //entity에 넣어야함 -> 생성자를 집어넣음
+        String number = body.get("number").toString();
+        MemberEntity member = new MemberEntity(name,mail,number);
+        String url = "http://localhost:8080/link/";
+
+        memberRepository.save(member);
+        return url+member.getId();
+
+
     }
 
-    public MemberEntity(){
-    };
-
     @GetMapping("/link/{id}")
-    public void MemberEntity<Member> UpdateCustType(){
+    public void  UpdateCustomType(){
 
     }
 

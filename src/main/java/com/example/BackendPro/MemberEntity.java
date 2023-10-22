@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "member")
 public class MemberEntity {
 
-    @Id
+    @Id()//자동생ㅡ
     private String Id;
     @Column (length = 255, nullable = false)
     private String name;
@@ -28,10 +28,16 @@ public class MemberEntity {
     @Column (length = 255, nullable = true)
     private String cust_type;
 
-    public MemberEntity (String name, String number, String mail) {
+    public MemberEntity (String mail , String name, String number) {
+        this.Id=Id;
         this.name=name;
         this.number=number;
         this.mail=mail;
+        this.cust_type="0";
+    }
+
+    public MemberEntity(){
+
     }
 
 }
