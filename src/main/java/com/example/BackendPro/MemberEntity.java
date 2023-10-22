@@ -28,5 +28,10 @@ public class MemberEntity {
     @Column (length = 255, nullable = true)
     private String cust_type;
 
+    public MemberEntity (String name, String number, String mail) {
+        this.name=name;
+        this.number=number;
+        this.mail=mail;
+    }
 
 }
