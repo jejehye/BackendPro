@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @Table(name = "member")
-public class Member {
+public class MemberEntity {
 
     @Id
     private String Id;
@@ -27,5 +27,6 @@ public class Member {
 
     @Column (length = 255, nullable = true)
     private String cust_type;
+
 
 }
