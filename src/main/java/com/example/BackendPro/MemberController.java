@@ -22,11 +22,11 @@ public class MemberController {
         memberRepository.save(member);
         return url+member.getId();
 
-
     }
 
     @GetMapping("/link/{id}")
-    public void  UpdateCustomType(){
+    public void UpdateCustomType(){
+        memberRepository.updateCust_typeByCust_typeNot();
 
     }
 
