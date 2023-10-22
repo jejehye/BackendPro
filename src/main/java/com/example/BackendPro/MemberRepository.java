@@ -9,10 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface MemberRepository extends JpaRepository<MemberEntity, String> {
-    @Transactional
-    @Modifying
-    @Query("update MemberEntity m set m.cust_type = ?0 where m.cust_type <> ?1")
-    void UpdateCustType();
 
-    void updateCust_typeByCust_typeNot();
 }

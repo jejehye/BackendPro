@@ -25,9 +25,13 @@ public class MemberController {
     }
 
     @GetMapping("/link/{id}")
-    public void UpdateCustomType(){
-        memberRepository.updateCust_typeByCust_typeNot();
-
+    public String UpdateCustomType(@PathVariable String Id) {
+        MemberEntity jeje = memberRepository.findById(Id).get(); //질문 is present
+        if (!jeje.getCust_type().equals("0")) {
+            return "이미 완료된 url 입니다";
+        }
+        jeje.setCust_type("1");
+        memberRepository.save(jeje);
+        return "SUCCESS!! THANK YOU";
     }
-
 }
