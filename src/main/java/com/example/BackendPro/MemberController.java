@@ -11,7 +11,7 @@ import java.util.*;
 public class MemberController {
     private final MemberRepository memberRepository;
     @PostMapping(value = "/link") // @requestbody <body의 타입> <변수명>
-    public String insertMember(@RequestBody Map<String, Object> body) {
+    public String InsertMember(@RequestBody Map<String, Object> body) {
 
         String name = body.get("name").toString();
         String mail = body.get("mail").toString();
@@ -25,7 +25,7 @@ public class MemberController {
     }
 
     @PutMapping("/link/{id}")
-    public String UpdateCustomType(@PathVariable String Id) {
+    public String updateCustomType(@PathVariable String Id) {
         MemberEntity jeje = memberRepository.findById(Id).get(); //질문 is present
         if (!jeje.getCust_type().equals("0")) {
             return "이미 완료된 url 입니다";
