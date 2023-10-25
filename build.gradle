@@ -22,13 +22,11 @@ repositories {
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url 'https://repo.spring.io/snapshot' }
 }
-
+//의존성 + 이유가 있어야한다
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.7'
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.7.7'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.7'
 	compileOnly 'org.projectlombok:lombok:1.18.26'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.7.7'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.7'
 }
